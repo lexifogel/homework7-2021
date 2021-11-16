@@ -34,7 +34,7 @@ document.querySelector("#faster").addEventListener("click", function() {
 // skip or restart
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Original location:" + video.currentTime); 
-	if (video.currentTime+15 <= video.duration) {
+	if (video.currentTime < video.duration-15) {
 		video.currentTime += 15; 
 	}
 	else { //(video.currentTime >= video.duration) {
@@ -74,6 +74,8 @@ document.querySelector("#vintage").addEventListener("click", function() {
 document.querySelector("#orig").addEventListener("click", function() {
 	video.classList.remove('oldSchool')
 });
+
+
 
 // bonus cuz why not
 // playback time (put in console when vid is paused)
