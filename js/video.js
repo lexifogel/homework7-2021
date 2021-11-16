@@ -33,14 +33,17 @@ document.querySelector("#faster").addEventListener("click", function() {
 
 // skip or restart
 document.querySelector("#skip").addEventListener("click", function() {
-	try {
+	console.log("Original location:" + video.currentTime); 
+	if (video.currentTime+15 <= video.duration) {
 		video.currentTime += 15; 
 	}
-	catch(err) {
-		video.currentTime = 0; 
+	else { //(video.currentTime >= video.duration) {
+		video.currentTime = 0;
+		console.log("Going back to beginning");
 	}
+
 	video.play();
-	console.log("Current location:" + video.currentTime); 
+	console.log("New location:" + video.currentTime); 
 });
 
 // mute and unmute
